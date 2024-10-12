@@ -1,126 +1,160 @@
+import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import code from 'public/code.png';
-import education from 'public/education.png'
+import education from 'public/education.png';
 import os from 'public/os.png';
 import briefcase from 'public/briefcase.png';
 import languages from 'public/languages.png';
 import guitar from 'public/guitar.png';
 
 const Tiles = () => {
-    return(
+  const tileRefs = useRef([]); // Create a ref array to hold tile references
 
-        <section id="two" className="pt-30 md:pt-0 lg:pt-0">
-        <br className="invisible md:visible"></br>
-        <div>
-          <h3 className="py-1 text-5xl font-bold text-white">About Me</h3>
-        </div>
-
-        <div className="gap-10 px-7 md:px-10 lg:flex-wrap lg:flex">
-
-          <div className="w-[100%] 3ti:w-[30%] text-center p-10 rounded-xl my-10 hover:transform hover:-translate-y-2 transition-transform duration-300" style={{ boxShadow: '0 0 20px rgba(200, 200, 200, 0.2)' }}>
-          <Image src={education} width={250} height={250} alt="" className="pb-3 mx-auto"/>
-            <h3 className="pt-8 pb-2 text-lg font-medium text-white">
-              Education
-            </h3>
-            <p className="py-2 text-slate-300">
-              High School Student
-            </p>
-            <h4 className="py-3 text-teal-500">Relevant Courses</h4>
-            
-            <p className="py-1 text-gray-400">Programming I (Python)</p>
-            <p className="py-1 text-gray-400">AP Computer Science A (Java)</p>
-            <p className="py-1 text-gray-400">AP Calc AB/BC</p>
-            <p className="py-1 text-gray-400">Trig/Pre-Calc Honors</p>
-            <p className="py-1 text-gray-400">Algebra II Honors</p>
-            <p className="py-1 text-gray-400">Engineering Design IS</p>
-
-
-          </div>
-
-          <div className="w-[100%] 3ti:w-[30%] text-center p-10 rounded-xl my-10 hover:transform hover:-translate-y-2 transition-transform duration-300" style={{ boxShadow: '0 0 20px rgba(200, 200, 200, 0.2)' }}>
-          <Image src={code} width={150} height={150} alt="" className="py-10 mx-auto"/>
-            <h3 className="pb-2 text-lg font-medium text-white pt-9">
-              Programming Languages
-            </h3>
-            <h4 className="py-3 text-teal-500">I am fluent in these.</h4>
-            
-            <p className="py-1 text-gray-400">Python</p>
-            <p className="py-1 text-gray-400">Java</p>
-            <p className="py-1 text-gray-400">HTML</p>
-            <p className="py-1 text-gray-400">CSS</p>
-            <p className="py-1 text-gray-400">ReactJS</p>
-            <p className="py-1 text-gray-400">TailwindCSS</p>
-            <p className="py-1 text-gray-400">NextJS</p>
-
-
-          </div>
-
-          <div className="w-[100%] 3ti:w-[30%] text-center p-10 rounded-xl my-10 hover:transform hover:-translate-y-2 transition-transform duration-300" style={{ boxShadow: '0 0 20px rgba(200, 200, 200, 0.2)' }}>
-          <Image src={os} width={218} height={250} alt="" className="pt-3 mx-auto"/>
-            <h3 className="pt-8 pb-2 text-lg font-medium text-white">
-              Operating Systems
-            </h3>
-
-            <h4 className="py-2 text-teal-500">In order from most to least used.</h4>
-            
-            <p className="py-1 text-gray-400">Microsoft Windows</p>
-            <p className="py-1 text-gray-400">Ubuntu based distributions</p>
-            <p className="py-1 text-gray-400">Arch based distributions</p>
-            <p className="py-1 text-gray-400">Debian based distributions</p>
-            <p className="py-1 text-gray-400">Apple Mac OS</p>
-
-
-          </div>
-
-          <div className="w-[100%] 3ti:w-[30%] text-center p-10 rounded-xl my-10 hover:transform hover:-translate-y-2 transition-transform duration-300" style={{ boxShadow: '0 0 20px rgba(200, 200, 200, 0.2)' }}>
-          <Image src={briefcase} width={160} height={250} alt="" className="pt-8 mx-auto"/>
-            <h3 className="pt-16 pb-2 text-lg font-medium text-white">
-              Professional Experience
-            </h3>
-
-            <h4 className="py-2 text-teal-500">More Information on Resume.</h4>
-            
-            <p className="py-1 text-gray-400">
-              <span className="font-extrabold "> Web Developer at Parkt</span>
-              <br>
-              </br>
-              I work alongside a team to develop the <span className="font-bold text-teal-500 underline"><a href="https://parkt.app/" target="_blank">website</a></span>.
-            </p>
-            <p className="pt-4 font-bold text-gray-400">Many projects on github.</p>
-
-
-          </div>
-
-          <div className="w-[100%] 3ti:w-[30%] text-center p-10 rounded-xl my-10 hover:transform hover:-translate-y-2 transition-transform duration-300" style={{ boxShadow: '0 0 20px rgba(200, 200, 200, 0.2)' }}>
-          <Image src={languages} width={210} height={250} alt="" className="pb-3 mx-auto"/>
-            <h3 className="pt-8 pb-2 text-lg font-medium text-white">
-              Languages Spoken
-            </h3>
-            <p className="py-1 text-gray-400">English Bilingual Proficiency</p>
-            <p className="py-1 text-gray-400">Spanish Bilingual Proficiency</p>
-            <p className="py-1 text-gray-400">French Limited Working Proficiency</p>
-
-            <h4 className="pt-3 text-teal-500">Currently Learning</h4>
-            
-            <p className="py-1 text-gray-400">German Elementary Level</p>
-
-          </div>
-
-          <div className="w-[100%] 3ti:w-[30%] text-center p-6 rounded-xl my-10 hover:transform hover:-translate-y-2 transition-transform duration-300" style={{ boxShadow: '0 0 20px rgba(200, 200, 200, 0.2)' }}>
-          <Image src={guitar} width={270} height={250} alt="" className="pb-1 mx-auto"/>
-            <h3 className="pb-2 text-lg font-medium text-white">
-              Hobbies
-            </h3>
-            <p className="py-1 text-gray-400">Club and High School Soccer</p>
-            <p className="py-1 text-gray-400">Acoustic and Electric Guitar</p>
-            <p className="py-1 text-gray-400">Programming personal projects</p>
-            <p className="py-1 text-gray-400">School Clubs <span className="font-bold text-teal-500 cursor-pointer"><a href="#one">listed on resume </a></span></p>
-          </div>
-
-        </div>
-      </section>
-
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove('opacity-0', 'translate-y-10');
+            entry.target.classList.add('opacity-100', 'translate-y-0');
+          }
+        });
+      },
+      { threshold: 0.1 }
     );
 
+    tileRefs.current.forEach((tile) => {
+      if (tile) observer.observe(tile);
+    });
+
+    return () => {
+      tileRefs.current.forEach((tile) => {
+        if (tile) observer.unobserve(tile);
+      });
+    };
+  }, []);
+
+  return (
+    <section id="two" className="pt-30 md:pt-0 lg:pt-0">
+      <br className="invisible md:visible"></br>
+      <div>
+        <h3 className="py-1 text-5xl font-bold text-white">About Me</h3>
+      </div>
+
+      <div className="gap-10 px-7 md:px-10 lg:flex-wrap lg:flex">
+        {[
+          {
+            img: education,
+            title: 'Education',
+            description: 'High School Student',
+            details: [
+              'Programming I (Python)',
+              'AP Computer Science A (Java)',
+              'AP Calc AB/BC',
+              'Trig/Pre-Calc Honors',
+              'Algebra II Honors',
+              'Engineering Design IS',
+            ],
+            imgWidth: 250,
+            imgHeight: 250,
+            detailsHeader: 'Relevant Courses',
+          },
+          {
+            img: code,
+            title: 'Programming Languages',
+            description: 'I am fluent in these.',
+            details: [
+              'Python',
+              'Java',
+              'HTML',
+              'CSS',
+              'ReactJS',
+              'TailwindCSS',
+              'NextJS',
+            ],
+            imgWidth: 150,
+            imgHeight: 150,
+          },
+          {
+            img: os,
+            title: 'Operating Systems',
+            description: 'In order from most to least used.',
+            details: [
+              'Microsoft Windows',
+              'Ubuntu based distributions',
+              'Arch based distributions',
+              'Debian based distributions',
+              'Apple Mac OS',
+            ],
+            imgWidth: 218,
+            imgHeight: 250,
+          },
+          {
+            img: briefcase,
+            title: 'Professional Experience',
+            description: 'More Information on Resume.',
+            details: [
+              <span className="font-extrabold">Web Developer at Parkt</span>,
+              'I work alongside a team to develop the ',
+              <span className="font-bold text-teal-500 underline">
+                <a href="https://parkt.app/" target="_blank" rel="noopener noreferrer">website</a>
+              </span>,
+              'Many projects on GitHub.',
+            ],
+            imgWidth: 160,
+            imgHeight: 250,
+          },
+          {
+            img: languages,
+            title: 'Languages Spoken',
+            description: 'English Bilingual Proficiency',
+            details: [
+              'English Bilingual Proficiency',
+              'Spanish Bilingual Proficiency',
+              'French Limited Working Proficiency',
+              <span>Currently Learning: <span className="font-bold text-teal-500">German Elementary Level</span></span>,
+            ],
+            imgWidth: 210,
+            imgHeight: 250,
+          },
+          {
+            img: guitar,
+            title: 'Hobbies',
+            description: 'Club and High School Soccer',
+            details: [
+              'Club and High School Soccer',
+              'Acoustic and Electric Guitar',
+              'Programming personal projects',
+              <span>School Clubs <span className="font-bold text-teal-500 cursor-pointer"><a href="#one">listed on resume</a></span></span>,
+            ],
+            imgWidth: 270,
+            imgHeight: 250,
+          },
+        ].map((tile, index) => (
+          <div
+            key={index}
+            className="w-[100%] 3ti:w-[30%] text-center p-10 rounded-xl my-10 opacity-0 translate-y-10 transition-all duration-1000 ease-out"
+            ref={(el) => (tileRefs.current[index] = el)} // Assign ref to each tile
+            style={{ boxShadow: '0 0 20px rgba(200, 200, 200, 0.2)' }}
+          >
+            <Image
+              src={tile.img}
+              width={tile.imgWidth}
+              height={tile.imgHeight}
+              alt={tile.title}
+              className="pb-3 mx-auto"
+            />
+            <h3 className="pt-8 pb-2 text-lg font-medium text-white">{tile.title}</h3>
+            <p className="py-2 text-slate-300">{tile.description}</p>
+            {tile.detailsHeader && <h4 className="py-3 text-teal-500">{tile.detailsHeader}</h4>}
+            {tile.details.map((detail, idx) => (
+              <p key={idx} className="py-1 text-gray-400 text-sm">{detail}</p> // Adjusted font size
+            ))}
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 };
+
 export default Tiles;
